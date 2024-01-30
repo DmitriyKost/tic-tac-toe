@@ -1,4 +1,6 @@
-use std::{io::{stdin, Stdin}, num::ParseIntError};
+use std::{io::stdin, num::ParseIntError};
+use crossterm::execute;
+use crossterm::terminal::{self, ClearType};
 
 #[derive(Debug)]
 enum Turn {
@@ -21,6 +23,7 @@ pub fn game_loop() {
     let mut board = get_board();
     let mut turn = Turn::X;
     loop {
+        execute!(std::io::stdout(), terminal::Clear(ClearType::All)).unwrap();
         println!("Turn {:?}", turn);
         print_board(&board);
         loop {
@@ -151,7 +154,7 @@ fn get_position() -> (usize, usize) {
     let stdin = stdin();
     let mut res: Vec<Result<usize, ParseIntError>>;
     loop {
-        println!("Enter the (x, y) (in range 1..3) for X, splitted with space");
+        println!("Enter the (x, y) (in range 1..3) for X, splitted with whitespace");
         let mut input = String::new();
         stdin.read_line(&mut input);
         res = input

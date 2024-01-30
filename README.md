@@ -12,6 +12,6 @@ Turn X
       1 | | | |
       2 | | | |
       3 | | | |
-Enter the (x, y) (in range 1..3) for X, splitted with space
+Enter the (x, y) (in range 1..3) for X, splitted with whitespace
 ```
 Enjoy the game
