@@ -1,3 +1,5 @@
+# Dependencies
+Crossterm, to make a dynamic user interface
 # Usage
 To start the program enter following command in project root directory:
 ```
